@@ -2,8 +2,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.rascalmpl</groupId>
-    <artifactId>rascal</artifactId>
-    <version>0.41.0-RC15-SNAPSHOT</version>
+    <artifactId>java-air</artifactId>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <scm>
@@ -33,19 +33,7 @@
         <rascal.test.memory>3</rascal.test.memory>
         <maven.compiler.release>11</maven.compiler.release>
         <rascal-maven.version>0.28.9-BOOT1</rascal-maven.version>
-        <jline.version>3.27.0</jline.version>
     </properties>
-
-    <licenses>
-        <license>
-            <name>BSD-2-Clause</name>
-            <url>https://opensource.org/license/BSD-2-Clause</url>
-            <distribution>repo</distribution>
-            <!-- we cannot define multiple licenses in this maven block, as it would mean the user can choose either of the licenses -->
-            <comments>Note, some older files are still licensed under Eclipse v1</comments>
-        </license>
-    </licenses>
-
 
     <build>
         <sourceDirectory>src</sourceDirectory>
@@ -61,13 +49,8 @@
                 <directory>.</directory>
                 <filtering>false</filtering>
                 <includes>
-                    <include>plugin.xml</include>
                     <include>META-INF/RASCAL.MF</include>
-                    <include>rascal-DEPENDENCIES.txt</include>
                 </includes>
-            </resource>
-            <resource>
-                <directory>${project.build.directory}/generated-resources</directory>
             </resource>
         </resources>
         <testSourceDirectory>test</testSourceDirectory>
@@ -90,37 +73,6 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>3.3.1</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>buildnumber-maven-plugin</artifactId>
-                <version>3.2.1</version>
-                <executions>
-                    <execution>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>create</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>3.3.1</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.13.0</version>
                 <configuration>
@@ -132,32 +84,14 @@
                 <artifactId>rascal-maven-plugin</artifactId>
                 <version>${rascal-maven.version}</version>
                 <configuration>
-                    <errorsAsWarnings>false</errorsAsWarnings> <!-- only allowed during intermediate bootstrap cycles -->
+                    <errorsAsWarnings>false</errorsAsWarnings> 
                     <bin>${project.build.outputDirectory}</bin>
                     <srcs>
-                        <src>${project.basedir}/src/org/rascalmpl/library</src>
-                        <!-- do not typecheck the checker or the tutor yet 
-                        <src>${project.basedir}/src/org/rascalmpl/tutor</src>
-                        <src>${project.basedir}/src/org/rascalmpl/compiler</src>
-                        -->
+                        <src>${project.basedir}/src</src>
                     </srcs>
-                    <sourceLookup>|std:///|</sourceLookup>
                     <funding>${project.basedir}/FUNDING</funding>
                     <citation>${project.basedir}/CITATION.md</citation>
-                    <issues>|https://github.com/usethesource/rascal/issues|</issues>
-                    <srcIgnores>
-                        <ignore>${project.basedir}/src/org/rascalmpl/tutor/lang/rascal/tutor/examples/</ignore>
-                        <ignore>${project.basedir}/src/org/rascalmpl/library/experiments</ignore>
-                        <ignore>${project.basedir}/src/org/rascalmpl/library/resource</ignore>
-                        <ignore>${project.basedir}/src/org/rascalmpl/library/lang/rascal/tests</ignore>
-                        <ignore>${project.basedir}/src/org/rascalmpl/library/lang/rascal/grammar/tests</ignore>
-                        <ignore>${project.basedir}/src/org/rascalmpl/library/lang/rascal/syntax/tests</ignore>
-                    </srcIgnores>
-                    <enableStandardLibrary>false</enableStandardLibrary>
-                    <parallel>true</parallel>
-                    <parallelPreChecks>
-                        <pre>${project.basedir}/src/org/rascalmpl/library/Prelude.rsc</pre>
-                    </parallelPreChecks>
+                    <issues>|https://github.com/usethesource/java-air/issues|</issues>
                 </configuration>
                 <executions>
                     <execution>
@@ -174,8 +108,6 @@
                             <goal>package</goal>
                         </goals>
                     </execution>
-
-		    <!-- commented out while bootstrapping the tutor
                     <execution>
                         <id>default-cli</id>
                         <phase>compile</phase>
@@ -183,40 +115,18 @@
                             <goal>tutor</goal>
                         </goals>
                         <configuration>
-                            <isPackageCourse>false</isPackageCourse>
-                            <enableStandardLibrary>false</enableStandardLibrary>
-                            <errorsAsWarnings>false</errorsAsWarnings>
+                            <isPackageCourse>true</isPackageCourse>
                             <bin>${project.build.outputDirectory}</bin>
                             <license>${project.basedir}/LICENSE</license>
-                            <sources>|http://github.com/usethesource/rascal/blob/main|</sources>
-                            <issues>|http://github.com/usethesource/rascal/issues|</issues>
+                            <sources>|http://github.com/usethesource/java-air/blob/main|</sources>
+                            <issues>|http://github.com/usethesource/java-air/issues|</issues>
                             <srcs>
-                                <src>${project.basedir}/src/org/rascalmpl/library</src>
+                                <src>${project.basedir}/src</src>
                             </srcs>
-                            <ignores>
-                                <ignore>${project.basedir}/src/org/rascalmpl/library/lang/rascal</ignore>
-                            </ignores>
                         </configuration>
-                        </execution>
-		    -->
+                    </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <artifactId>maven-clean-plugin</artifactId>
-                <version>3.4.0</version>
-                <configuration>
-                    <filesets>
-                        <fileset>
-                            <directory>${project.basedir}/bin</directory>
-                            <includes>
-                                <include>**/*.*</include>
-                            </includes>
-                            <followSymlinks>false</followSymlinks>
-                        </fileset>
-                    </filesets>
-                </configuration>
-            </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -232,18 +142,14 @@
                 </executions>
                 <configuration>
                     <argLine>
-                                -ea
-                                -Xmx${rascal.test.memory}G
-                                -Xss128m
-                                -Dfile.encoding=UTF-8
-                                ${argLine}
-                        </argLine>
+                        -ea
+                        -Xmx${rascal.test.memory}G
+                        -Xss128m
+                        -Dfile.encoding=UTF-8
+                        ${argLine}
+                    </argLine>
                     <includes>
-                        <include>**/org/rascalmpl/test/AllSuiteParallel.java</include>
-                        <include>**/org/rascalmpl/test/library/LibraryLangPaths.java</include>
-                        <include>**/org/rascalmpl/test/value/AllTests.java</include>
-                        <include>**/org/rascalmpl/test/repl/*Test.java</include>
-                        <include>**/org/rascalmpl/*Test.java</include>
+                        <include>**/AllTests.java</include>
                     </includes>
                 </configuration>
             </plugin>
@@ -268,28 +174,51 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.8.1</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>tree</goal>
-                        </goals>
-                        <phase>package</phase>
-                        <configuration>
-                            <output>rascal-DEPENDENCIES.txt</output>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
                 <version>3.1.1</version>
                 <configuration>
                     <tagNameFormat>v@{project.version}</tagNameFormat>
                     <arguments>-Drascal.compile.skip -Drascal.tutor.skip -DskipTests</arguments>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.mycila</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <!-- check and possible add license header
+                    run mvn license:format to automatically update all license headers
+                and add missing ones -->
+                <version>4.6</version>
+                <configuration>
+                    <headerDefinitions>
+                        <headerDefinition>rascal_style.xml</headerDefinition>
+                    </headerDefinitions>
+                    <licenseSets>
+                        <licenseSet>
+                            <header>../LICENSE.txt</header>
+                            <excludes>
+                                <exclude>rascal_style.xml</exclude>
+                                <exclude>checkstyle.xml</exclude>
+                                <exclude>**/README</exclude>
+                                <exclude>**/*.tpl</exclude>
+                                <exclude>META-INF/**</exclude>
+                                <exclude>.editorconfig</exclude>
+                                <exclude>CITATION</exclude>
+                                <exclude>FUNDING</exclude>
+                            </excludes>
+                        </licenseSet>
+                    </licenseSets>
+                    <mapping>
+                        <java>SLASHSTAR_STYLE</java>
+                        <rsc>RASCAL_STYLE</rsc>
+                    </mapping>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
