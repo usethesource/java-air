@@ -1,4 +1,4 @@
-package org.rascalmpl.library.lang.java.m3.internal;
+package lang.java.m3.internal;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -568,6 +568,7 @@ public class SourceConverter extends M3Converter {
 		return true;
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	public boolean visit(TypeDeclaration node) {
 		insert(containment, getParent(), ownValue);

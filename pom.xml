@@ -224,6 +224,12 @@
     </build>
 
     <dependencies>
+        <!-- Rascal -->
+        <dependency>
+            <groupId>org.rascalmpl</groupId>
+            <artifactId>rascal</artifactId>
+            <version>0.41.0-RC11</version>
+        </dependency>
         <!-- Repackaged Eclipse Dependencies -->
         <dependency>
             <groupId>org.rascalmpl</groupId>

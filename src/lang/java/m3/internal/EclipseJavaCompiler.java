@@ -14,7 +14,7 @@
  *   * Anastasia Izmaylova - A.Izmaylova@cwi.nl - CWI
  *   * Davy Landman - Davy.Landman@cwi.nl (CWI)
  *******************************************************************************/
-package org.rascalmpl.library.lang.java.m3.internal;
+package lang.java.m3.internal;
 
 import java.io.File;
 import java.io.IOException;

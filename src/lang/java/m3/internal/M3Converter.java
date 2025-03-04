@@ -1,4 +1,4 @@
-package org.rascalmpl.library.lang.java.m3.internal;
+package lang.java.m3.internal;
 
 import java.util.Stack;
 

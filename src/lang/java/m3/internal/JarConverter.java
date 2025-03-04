@@ -16,9 +16,9 @@
  * This code was developed in the Software Evolution course of the Software Engineering master.
  * 
  *******************************************************************************/
-package org.rascalmpl.library.lang.java.m3.internal;
+package lang.java.m3.internal;
 
-import static org.rascalmpl.library.lang.java.m3.internal.M3Constants.*;
+import static lang.java.m3.internal.M3Constants.*;
 
 import java.io.IOException;
 import java.util.ArrayList;

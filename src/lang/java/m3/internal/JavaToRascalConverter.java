@@ -12,7 +12,7 @@
  *   * Lina María Ochoa Venegas
  *   * Davy Landman 
 *******************************************************************************/
-package org.rascalmpl.library.lang.java.m3.internal;
+package lang.java.m3.internal;
 
 import java.net.URISyntaxException;
 import java.util.List;

@@ -12,7 +12,7 @@
  *   * Lina María Ochoa Venegas
  *   * Davy Landman 
 *******************************************************************************/
-package org.rascalmpl.library.lang.java.m3.internal;
+package lang.java.m3.internal;
 
 import java.util.Iterator;
 import java.util.List;
@@ -321,6 +321,7 @@ public class ASTConverter extends JavaToRascalConverter {
         return false;
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public boolean visit(ArrayType node) {
         int apiLevel = node.getAST().apiLevel();
@@ -389,6 +390,7 @@ public class ASTConverter extends JavaToRascalConverter {
         return false;
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public boolean visit(BreakStatement node) {
         if (node.getLabel() != null) {
@@ -435,6 +437,7 @@ public class ASTConverter extends JavaToRascalConverter {
         return false;
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public boolean visit(ClassInstanceCreation node) {
         IValue expression = node.getExpression() == null ? null : visitChild(node.getExpression());
@@ -526,6 +529,7 @@ public class ASTConverter extends JavaToRascalConverter {
         return false;
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public boolean visit(ConstructorInvocation node) {
         IListWriter types = values.listWriter();
@@ -726,6 +730,7 @@ public class ASTConverter extends JavaToRascalConverter {
         return false;
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public boolean visit(ImportDeclaration node) {
         IValue name = visitChild(node.getName());
@@ -904,6 +909,7 @@ public class ASTConverter extends JavaToRascalConverter {
         return false;
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public boolean visit(MethodDeclaration node) {
         String constructorName = "method";
@@ -986,6 +992,7 @@ public class ASTConverter extends JavaToRascalConverter {
         return false;
     }
     
+    @SuppressWarnings("deprecation")
     @Override
     public boolean visit(MethodInvocation node) {
         IListWriter genericTypes = values.listWriter();
@@ -1239,6 +1246,7 @@ public class ASTConverter extends JavaToRascalConverter {
         return false;
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public boolean visit(SingleVariableDeclaration node) {
         IValue name = visitChild(node.getName());
@@ -1325,6 +1333,7 @@ public class ASTConverter extends JavaToRascalConverter {
         return false;
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public boolean visit(SuperConstructorInvocation node) {
         IValue expression = node.getExpression() == null ? null : visitChild(node.getExpression());
@@ -1370,6 +1379,7 @@ public class ASTConverter extends JavaToRascalConverter {
         return false;
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public boolean visit(SuperMethodInvocation node) {
         IValue qualifier = node.getQualifier() == null ? null : visitChild(node.getQualifier());
@@ -1404,6 +1414,7 @@ public class ASTConverter extends JavaToRascalConverter {
 
     @Override
     public boolean visit(SwitchCase node) {
+        @SuppressWarnings("deprecation")
         IValue expression = node.getExpression() == null ? null : visitChild(node.getExpression());
         List<?> expressions = node.expressions();
 
@@ -1633,6 +1644,7 @@ public class ASTConverter extends JavaToRascalConverter {
         return false;
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public boolean visit(TypeDeclaration node) {
         IList modifiers = visitChildren(node.modifiers());
@@ -1686,6 +1698,7 @@ public class ASTConverter extends JavaToRascalConverter {
         return false;
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public boolean visit(TypeDeclarationStatement node) {
         IValue typeDeclaration;
