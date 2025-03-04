@@ -10,6 +10,7 @@ Redistribution and use in source and binary forms, with or without modification,
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 }
+@synopsis{Regression tests and backward compatibility tests for AST construction and M3 extraction for Java}
 module lang::java::tests::BasicM3Tests
 
 import util::Reflective;
@@ -34,21 +35,21 @@ private loc unpackExampleProject(str name, loc projectZip) {
 }
 
 // Static data for regression testing against the Hamcrest project
-public loc hamcrestJar      = getResource("m3/hamcrest-library-1.3.jar");
-public loc hamcrestBinaryM3 = getResource("m3/hamcrest-library-1.3-m3.bin");
+public loc hamcrestJar      = getResource("data/hamcrest-library-1.3.jar");
+public loc hamcrestBinaryM3 = getResource("data/hamcrest-library-1.3-m3.bin");
 
 // Static data for regression testing against the JUnit4 project
-public loc junitSourceZip         = getResource("m3/junit4-project-source.zip");
-public loc junitBinaryM3          = getResource("m3/junit4-m3s.bin");
-public loc junitBinaryASTs        = getResource("m3/junit4-asts.bin");
+public loc junitSourceZip         = getResource("data/junit4-project-source.zip");
+public loc junitBinaryM3          = getResource("data/junit4-m3s.bin");
+public loc junitBinaryASTs        = getResource("data/junit4-asts.bin");
 public loc junitProject           = unpackExampleProject("junit4", junitSourceZip);
 public list[loc] junitClassPath   = [junitProject + "/lib/hamcrest-core-1.3.jar", junitProject + "/lib/hamcrest-library-1.3.jar"];
 public list[loc] junitSourcePath  = [junitProject + "/src/main/java/", junitProject + "/src/test/java/" ];
 
 // Static data for regression testing against the Snakes and Ladders project
-public loc snakesAndLaddersSource      = getResource("m3/snakes-and-ladders-project-source.zip");
-public loc snakesAndLaddersBinaryM3    = getResource("m3/snakes-and-ladders-m3s.bin");
-public loc snakesAndLaddersBinaryAST   = getResource("m3/snakes-and-ladders-asts.bin");
+public loc snakesAndLaddersSource      = getResource("data/snakes-and-ladders-project-source.zip");
+public loc snakesAndLaddersBinaryM3    = getResource("data/snakes-and-ladders-m3s.bin");
+public loc snakesAndLaddersBinaryAST   = getResource("data/snakes-and-ladders-asts.bin");
 public loc snakesAndLaddersProject     = unpackExampleProject("snakes-and-ladders", snakesAndLaddersSource);
 public list[loc] snakesClassPath       = [snakesAndLaddersProject + "jexample-4.5-391.jar"];
 public list[loc] snakesSourcePath      = [snakesAndLaddersProject + "/src/"];
