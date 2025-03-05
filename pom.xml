@@ -122,6 +122,7 @@
                             <goal>package</goal>
                         </goals>
                     </execution>
+                   <!-- tutor is temporarily broken
                     <execution>
                         <id>default-cli</id>
                         <phase>compile</phase>
@@ -138,7 +139,7 @@
                                 <src>${project.basedir}/src</src>
                             </srcs>
                         </configuration>
-                    </execution>
+                    </execution> -->
                 </executions>
             </plugin>
             <plugin>
