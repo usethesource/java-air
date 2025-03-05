@@ -31,7 +31,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Test with Maven
-        run: mvn -B --update-snapshots compile test
+        run: mvn -B --update-snapshots -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn compile test
 
       - name: Attach artifact
         id: build-artifact
