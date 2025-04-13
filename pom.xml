@@ -103,14 +103,15 @@
                     <srcs>
                         <src>${project.basedir}/src</src>
                     </srcs>
-                    <funding>${project.basedir}/FUNDING</funding>
-                    <citation>${project.basedir}/CITATION.md</citation>
-                    <issues>|https://github.com/usethesource/java-air/issues|</issues>
+                    <verbose>true</verbose>
                 </configuration>
                 <executions>
                     <execution>
                         <id>it-compile</id>
                         <phase>compile</phase>
+                        <configuration>
+                            <verbose>true</verbose>
+                        </configuration>
                         <goals>
                             <goal>compile</goal>
                         </goals>
@@ -131,9 +132,11 @@
                         <configuration>
                             <isPackageCourse>true</isPackageCourse>
                             <bin>${project.build.outputDirectory}</bin>
+                            <funding>${project.basedir}/FUNDING</funding>
+                            <citation>${project.basedir}/CITATION.md</citation>
+                            <issues>|https://github.com/usethesource/java-air/issues|</issues>
                             <license>${project.basedir}/LICENSE</license>
                             <sources>|http://github.com/usethesource/java-air/blob/main|</sources>
-                            <issues>|http://github.com/usethesource/java-air/issues|</issues>
                             <srcs>
                                 <src>${project.basedir}/src</src>
                             </srcs>
