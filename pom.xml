@@ -103,11 +103,10 @@
                     <srcs>
                         <src>${project.basedir}/src</src>
                     </srcs>
-                    <verbose>true</verbose>
                 </configuration>
                 <executions>
                     <execution>
-                        <id>it-compile</id>
+                        <id>default-compile</id>
                         <phase>compile</phase>
                         <configuration>
                             <verbose>true</verbose>
@@ -117,15 +116,15 @@
                         </goals>
                     </execution>
                     <execution>
-                        <id>it-package</id>
+                        <id>default-package</id>
                         <phase>prepare-package</phase>
                         <goals>
                             <goal>package</goal>
                         </goals>
                     </execution>
                     <execution>
-                        <id>default-cli</id>
-                        <phase>compile</phase>
+                        <id>default-resources</id>
+                        <phase>resources</phase>
                         <goals>
                             <goal>tutor</goal>
                         </goals>
@@ -245,7 +244,7 @@
         <dependency>
             <groupId>org.rascalmpl</groupId>
             <artifactId>rascal</artifactId>
-            <version>0.41.0-RC32</version>
+            <version>0.41.0-RC33</version>
         </dependency>
         <!-- Repackaged Eclipse Dependencies -->
         <dependency>
