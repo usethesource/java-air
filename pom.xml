@@ -21,7 +21,7 @@
     <packaging>jar</packaging>
 
     <scm>
-        <developerConnection>scm:git:ssh://git@github.com/usethesource/rascal.git</developerConnection>
+        <developerConnection>scm:git:ssh://git@github.com/usethesource/java-air.git</developerConnection>
         <tag>v1.0.0-RC1</tag>
     </scm>
 
