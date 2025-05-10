@@ -99,9 +99,6 @@
                     <execution>
                         <id>default-compile</id>
                         <phase>compile</phase>
-                        <configuration>
-                            <verbose>true</verbose>
-                        </configuration>
                         <goals>
                             <goal>compile</goal>
                         </goals>
