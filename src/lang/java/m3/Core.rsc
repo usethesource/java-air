@@ -214,7 +214,7 @@ M3 createM3FromFile(loc file, bool errorRecovery = false, list[loc] sourcePath =
 @description{
   Each M3 has the `id` filled with a matching location from `files`.
 }
-@javaClass{org.rascalmpl.library.lang.java.m3.internal.EclipseJavaCompiler}
+@javaClass{lang.java.m3.internal.EclipseJavaCompiler}
 java set[M3] createM3sFromFiles(set[loc] files, bool errorRecovery = false, list[loc] sourcePath = [], list[loc] classPath = [], Language javaVersion = JLS13());
 
 @synopsis{For a set of Java files, creates a composed M3.}
@@ -224,19 +224,19 @@ java set[M3] createM3sFromFiles(set[loc] files, bool errorRecovery = false, list
 M3 createM3FromFiles(loc projectName, set[loc] files, bool errorRecovery = false, list[loc] sourcePath = [], list[loc] classPath = [], Language javaVersion = JLS13())
     = composeJavaM3(projectName, createM3sFromFiles(files, errorRecovery = errorRecovery, sourcePath = sourcePath, classPath = classPath, javaVersion = javaVersion));
 
-@javaClass{org.rascalmpl.library.lang.java.m3.internal.EclipseJavaCompiler}
+@javaClass{lang.java.m3.internal.EclipseJavaCompiler}
 java tuple[set[M3], set[Declaration]] createM3sAndAstsFromFiles(set[loc] files, bool errorRecovery = false, list[loc] sourcePath = [], list[loc] classPath = [], Language javaVersion = JLS13());
 
-@javaClass{org.rascalmpl.library.lang.java.m3.internal.EclipseJavaCompiler}
+@javaClass{lang.java.m3.internal.EclipseJavaCompiler}
 java M3 createM3FromString(loc fileName, str contents, bool errorRecovery = false, list[loc] sourcePath = [], list[loc] classPath = [], Language javaVersion = JLS13());
 
-@javaClass{org.rascalmpl.library.lang.java.m3.internal.EclipseJavaCompiler}
+@javaClass{lang.java.m3.internal.EclipseJavaCompiler}
 java M3 createM3FromJarClass(loc jarClass, list[loc] classPath = []);
 
-@javaClass{org.rascalmpl.library.lang.java.m3.internal.EclipseJavaCompiler}
+@javaClass{lang.java.m3.internal.EclipseJavaCompiler}
 java M3 createM3FromSingleClass(loc jarClass, str className, list[loc] classPath = []);
 
-@javaClass{org.rascalmpl.library.lang.java.m3.internal.EclipseJavaCompiler}
+@javaClass{lang.java.m3.internal.EclipseJavaCompiler}
 java M3 createM3FromJarFile(loc jarLoc, list[loc] classPath = []);
 
 @synopsis{Globs for jars, class files and java files in a directory and tries to compile all source files into an M3 model}

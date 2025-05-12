@@ -386,11 +386,11 @@ public Declaration createAstFromFile(loc file, bool collectBindings, bool errorR
 * While the function takes a set of locations, it ignores the positional information of the location.
 Meaning, that it analyzes the whole file and not just the part that the positional information describes.
 }
-@javaClass{org.rascalmpl.library.lang.java.m3.internal.EclipseJavaCompiler}
+@javaClass{lang.java.m3.internal.EclipseJavaCompiler}
 public java set[Declaration] createAstsFromFiles(set[loc] file, bool collectBindings, bool errorRecovery = false, list[loc] sourcePath = [], list[loc] classPath = [], Language javaVersion = JLS13());
 
 @synopsis{Creates AST from a string using Eclipse JDT compiler.}
-@javaClass{org.rascalmpl.library.lang.java.m3.internal.EclipseJavaCompiler}
+@javaClass{lang.java.m3.internal.EclipseJavaCompiler}
 public java Declaration createAstFromString(loc fileName, str source, bool collectBinding, bool errorRecovery = false, list[loc] sourcePath = [], list[loc] classPath = [], Language javaVersion = JLS13());
 
 @synopsis{Creates a set ASTs for all Java source files in a project using Eclipse's JDT compiler}
