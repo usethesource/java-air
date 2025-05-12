@@ -65,10 +65,10 @@
                 </includes>
             </resource>
         </resources>
-        <testSourceDirectory>test</testSourceDirectory>
+        <testSourceDirectory>src</testSourceDirectory>
         <testResources>
             <testResource>
-                <directory>test</directory>
+                <directory>src</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
                     <exclude>**/*.class</exclude>
@@ -147,13 +147,12 @@
                 <configuration>
                     <argLine>
                         -ea
-                        -Xmx${rascal.test.memory}G
+                        -Xmx1G
                         -Xss128m
                         -Dfile.encoding=UTF-8
-                        ${argLine}
                     </argLine>
                     <includes>
-                        <include>**/AllTests.java</include>
+                        <include>**/RunTests.java</include>
                     </includes>
                 </configuration>
             </plugin>
