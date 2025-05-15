@@ -292,7 +292,7 @@ public class EclipseJavaCompiler {
         for (IValue p : paths) {
             ISourceLocation loc = safeResolve((ISourceLocation)p);
             if (!loc.getScheme().equals("file")) {
-                throw RuntimeExceptionFactory.io(VF.string("all path entries must have (or resolve to) the file:/// scheme: " + loc), null, null);
+                monitor.warning("skipped unresolvable path (must be file:/// scheme) ", loc);
             }
             result[i++] = new File(loc.getPath()).getAbsolutePath();
         }
