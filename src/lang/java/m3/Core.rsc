@@ -80,7 +80,7 @@ as elements of other schemes, for example to uniquel encode parameter types of m
 * Java M3 is an _immutable_ database, which is implemented using advanced persistent hash-tries under the hood. This makes analysis fast,
 and if you compute new M3 models from earlier models your source data can never be influenced by the later stages. This is very good
 for research purposes where the provenance of every data point is essential for the sake of validity. 
-* Java M3 is complete in the sense that all notions of programmable artefacts that exist in Java are represented. However, every piece of information is local and static: intra-procedural, flow and path insensitive. If the M3 database does not provide enough information, then the AST model is the next source to use. There is also a flow analysis module: ((JavaToObjectFlow)).
+* Java M3 is complete in the sense that all notions of programmable artefacts that exist in Java are represented. However, every piece of information is local and static: intra-procedural, flow and path insensitive. If the M3 database does not provide enough information, then the AST model is the next source to use. There is also a [flow analysis module]((lang::java::flow::JavaToObjectFlow)).
 * Java M3 is aligned with the AST model for Java:
    * every `decl=` parameter on Declarations nodes corresponds to an entry in the `declarations` relation in M3
    * every `decl=` parameter on other nodes (Expressions, Types, Statements), corresponds to an entry in the `uses` relation in M3.
