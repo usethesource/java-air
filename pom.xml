@@ -44,7 +44,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven-version>3.9.9</maven-version>
         <maven.compiler.release>11</maven.compiler.release>
-        <rascal-version>0.41.0-RC67</rascal-version>
+        <rascal-version>0.41.0-RC67-SNAPSHOT</rascal-version>
         <rascal-maven.version>0.30.0-RC29-SNAPSHOT</rascal-maven.version>
     </properties>
 
@@ -55,6 +55,9 @@
                 <directory>src</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
+                    <exclude>**/*.jar</exclude>
+                    <exclude>**/data/*.jar</exclude>
+                    <exclude>**/data/*.bin</exclude>
                     <exclude>**/*.class</exclude>
                 </excludes>
             </resource>
