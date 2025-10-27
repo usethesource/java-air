@@ -56,9 +56,9 @@
                 <excludes>
                     <exclude>**/*.java</exclude>
                     <exclude>**/*.jar</exclude>
-                    <exclude>**/data/*.jar</exclude>
-                    <exclude>**/data/*.bin</exclude>
+                    <exclude>**/*.bin</exclude>
                     <exclude>**/*.class</exclude>
+                    <exclude>**/*.zip</exclude>
                 </excludes>
             </resource>
             <resource>
@@ -76,6 +76,9 @@
                 <excludes>
                     <exclude>**/*.java</exclude>
                     <exclude>**/*.class</exclude>
+                    <exclude>**/*.jar</exclude>
+                    <exclude>**/*.bin</exclude>
+                    <exclude>**/*.zip</exclude>
                 </excludes>
             </testResource>
         </testResources>
