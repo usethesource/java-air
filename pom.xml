@@ -17,12 +17,12 @@
 
     <groupId>org.rascalmpl</groupId>
     <artifactId>java-air</artifactId>
-    <version>1.0.0-RC4</version>
+    <version>1.0.0-RC5-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <scm>
         <developerConnection>scm:git:ssh://git@github.com/usethesource/java-air.git</developerConnection>
-        <tag>v1.0.0-RC4</tag>
+        <tag>v1.0.0-RC3</tag>
     </scm>
 
     <!-- dependency resolution configuration (usethesource) -->
