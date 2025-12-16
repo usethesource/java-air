@@ -44,8 +44,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven-version>3.9.9</maven-version>
         <maven.compiler.release>11</maven.compiler.release>
-        <rascal-version>0.41.0</rascal-version>
-        <rascal-maven.version>0.30.0</rascal-maven.version>
+        <rascal-version>0.41.2</rascal-version>
+        <rascal-maven.version>0.30.3</rascal-maven.version>
     </properties>
 
     <build>
