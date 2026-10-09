@@ -193,7 +193,7 @@ public class BindingsResolver {
         
         if (tb != null && tb.isArray() && "length".equals(node.getName().getIdentifier())) {
             ISourceLocation arrayType = resolveBinding(tb);
-            return makeBinding("java+arrayLength", arrayType.getAuthority(), arrayType.getPath());
+            return makeBinding("java+arraylength", arrayType.getAuthority(), arrayType.getPath());
         }
         
         return resolveBinding(node.resolveFieldBinding());
@@ -246,7 +246,7 @@ public class BindingsResolver {
 		
 		if (tb != null && tb.isArray()  && "length".equals(node.getName().getIdentifier())) {
 		    ISourceLocation arrayType = resolveBinding(tb);
-		    return makeBinding("java+arrayLength", arrayType.getAuthority(), arrayType.getPath());
+		    return makeBinding("java+arraylength", arrayType.getAuthority(), arrayType.getPath());
 		}
 		
 		return resolveBinding(node.getName(), false);

@@ -56,9 +56,9 @@ These are the kinds of logical names that can be found in a Java M3 model:
 * `unresolved:///` is from general M3 and means a name was tried to be resolved, but this was unsuccessful. Typically this means either the Java source code was statically incorrect, or the _classpath_ for configuring AST or M3 extraction was incomplete.
 * `java+class:///` is a fully resolved and qualified class name
 * `java+interface:///` is a fully resolved and qualified interface name
-* `java+classOrInterface:///` is the fully qualified name of an external class or interface that has not been resolved (since it is not on the classpath but it is used).
+* `java+classorinterface:///` is the fully qualified name of an external class or interface that has not been resolved (since it is not on the classpath but it is used).
 * `java+module:///` the root scheme points to _any or all_ modules and when it has a qualified name it is a specific module (a la Java 9's module system).
-* `java+compilationUnit:///` is the name of a file that contains an entire Java compilationUnit. The path name starts from the root of the source path for the current analysis run, or from the jar file that contains the .class bytecode currently under analysis. Typically a source compilation unit has one class member in the `containment` relation, but this is not required. There could be more private or protected classes in the same unit.
+* `java+compilationunit:///` is the name of a file that contains an entire Java compilationUnit. The path name starts from the root of the source path for the current analysis run, or from the jar file that contains the .class bytecode currently under analysis. Typically a source compilation unit has one class member in the `containment` relation, but this is not required. There could be more private or protected classes in the same unit.
 * `java+constructor:///` is the fully qualified constructor method of class (including parameter types to distinguish it from the other constructors)
 * `java+method:///` is the fully qualified constructor method of class (including parameter types to distinguish it from the other constructors)
 * `java+initializer:///` unique address of an initializer expression for a field or variable.
@@ -67,13 +67,13 @@ These are the kinds of logical names that can be found in a Java M3 model:
 * `java+field:///` unique address for fields of classes and interfaces.
 * `java+enum:///` is a fully resolved and qualified name of an enum class.
 * `java+array:///` is the name of an array type
-* `java+typeVariable:///` is the unique address of an open type variable (of a class or method)
-* `java+wildcardType:///` is the address of an anonymous type variable.
-* `java+enumConstant:///` is the unique address of one of the constants of an `enum` type.
+* `java+typevariable:///` is the unique address of an open type variable (of a class or method)
+* `java+wildcardtype:///` is the address of an anonymous type variable.
+* `java+enumconstant:///` is the unique address of one of the constants of an `enum` type.
 * `java+field:///` is the unique address of a field in a class, interface or enum.
-* `java+arrayLength:///` is the singleton address for the length field of all arrays in Java.
-* `java+primitiveType:///` is used when type resolution points to a builtin primitive in Java. These names also often occur
-* `java+anonymousClass:///` uniquely labels anonymous classes, however since indexing is used the names are not stable between different versions of the same code, or between binary and source extractions.
+* `java+arraylength:///` is the singleton address for the length field of all arrays in Java.
+* `java+primitivetype:///` is used when type resolution points to a builtin primitive in Java. These names also often occur
+* `java+anonymousclass:///` uniquely labels anonymous classes, however since indexing is used the names are not stable between different versions of the same code, or between binary and source extractions.
 as elements of other schemes, for example to uniquel encode parameter types of methods.
 }
 @benefits{
