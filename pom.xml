@@ -44,8 +44,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven-version>3.9.9</maven-version>
         <maven.compiler.release>11</maven.compiler.release>
-        <rascal-version>0.43.0-RC1</rascal-version>
-        <rascal-maven.version>0.31.0</rascal-maven.version>
+        <rascal-version>0.43.0</rascal-version>
+        <rascal-maven.version>0.32.2</rascal-maven.version>
     </properties>
 
     <build>
@@ -89,7 +89,7 @@
             <plugin>
                 <groupId>org.rascalmpl</groupId>
                 <artifactId>rascal-maven-plugin</artifactId>
-                <version>0.30.0-RC29</version>
+                <version>0.32.0-RC7</version>
                 <configuration>
                     <bin>${project.build.outputDirectory}</bin>
                     <srcs>
@@ -102,6 +102,13 @@
                         <phase>compile</phase>
                         <goals>
                             <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>default-test</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>test</goal>
                         </goals>
                     </execution>
                     <execution>
@@ -131,31 +138,6 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.5.2</version>
-                <executions>
-                    <execution>
-                        <id>default-test</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <argLine>
-                        -ea
-                        -Xmx1G
-                        -Xss128m
-                        -Dfile.encoding=UTF-8
-                    </argLine>
-                    <includes>
-                        <include>**/RunTests.java</include>
-                    </includes>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -222,11 +204,6 @@
             <version>0.6.0</version>
         </dependency>
         <!-- Regular POM Dependencies -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.2</version>
-        </dependency>
         <dependency>
             <groupId>org.ow2.asm</groupId>
             <artifactId>asm</artifactId>

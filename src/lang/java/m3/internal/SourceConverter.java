@@ -511,7 +511,7 @@ public class SourceConverter extends M3Converter {
 			insert(fieldAccess, getParent(), ownValue);
 		}
 
-		if (((ISourceLocation) ownValue).getScheme().equals("java+arrayLength")) {
+		if (((ISourceLocation) ownValue).getScheme().equals("java+arraylength")) {
 			insert(fieldAccess, getParent(), ownValue);
 		}
 
