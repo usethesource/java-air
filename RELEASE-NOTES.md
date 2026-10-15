@@ -1,4 +1,12 @@
 
+# 1.0.3 - October 2026
+
+Main changes:
+
+* Updated to `rascal` version `0.43.0`
+
+See the commit [history](https://github.com/usethesource/java-air/compare/v1.0.0...v1.0.2) for details.
+
 # 1.0.0 - April 2025
 
 Java-air was extracted from rascal version 0.40.0. The Java analysis framework
