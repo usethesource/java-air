@@ -319,7 +319,7 @@ M3 createM3FromJar(loc jarFile, list[loc] classPath = []) {
 }
 
 void unregisterJavaProject(loc project) {
-  unregisterProjectSchemes(project, {"java+compilationUnit", "java+compilationUnit", "java+class", "java+constructor", "java+initializer", "java+parameter","java+variable","java+field" , "java+interface" , "java+enum", "java+class" , "java+interface","java+enum","java+module"});
+  unregisterProjectSchemes(project, {"java+compilationunit", "java+compilationunit", "java+class", "java+constructor", "java+initializer", "java+parameter","java+variable","java+field" , "java+interface" , "java+enum", "java+class" , "java+interface","java+enum","java+module"});
 }
 
 @deprecated{
@@ -332,7 +332,7 @@ str getMethodSignature(loc method)
 @description{
   A compilation unit is equivalent to a `.java` file in Java.
 }
-bool isCompilationUnit(loc entity) = entity.scheme == "java+compilationUnit";
+bool isCompilationUnit(loc entity) = entity.scheme == "java+compilationunit";
 
 @synopsis{Checks if the logical name of the `entity` is a package.}
 bool isPackage(loc entity) = entity.scheme == "java+package";
