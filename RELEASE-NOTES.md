@@ -1,7 +1,10 @@
 
-# 1.0.3 - October 2026
+# 1.1.0 - November 2026
 
-Main changes:
+* Registers all logical URIs with an empty authority for compatibility with rascal >= 0.43.2
+* Updated to `rascal` version `0.43.3`
+
+# 1.0.3 - October 2026
 
 * Updated to `rascal` version `0.43.0`
 
