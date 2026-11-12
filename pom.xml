@@ -44,7 +44,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven-version>3.9.9</maven-version>
         <maven.compiler.release>11</maven.compiler.release>
-        <rascal-version>0.43.2</rascal-version>
+        <rascal-version>0.43.3-RC1</rascal-version>
         <rascal-maven.version>0.32.2</rascal-maven.version>
     </properties>
 
@@ -145,7 +145,7 @@
                 <version>3.1.1</version>
                 <configuration>
                     <tagNameFormat>v@{project.version}</tagNameFormat>
-                    <arguments>-Drascal.compile.skip -Drascal.tutor.skip -DskipTests</arguments>
+                    <arguments>-Drascal.compile.skip -Drascal.tutor.skip -Drascal.test.skip -DskipTests</arguments>
                 </configuration>
             </plugin>
             <plugin>
