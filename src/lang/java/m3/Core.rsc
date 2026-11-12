@@ -257,7 +257,7 @@ M3 createM3FromDirectory(loc project, bool errorRecovery = false, bool includeJa
     sourcePaths = getPaths(project, "java");
     M3 result = composeJavaM3(project, createM3sFromFiles({p | sp <- sourcePaths, p <- find(sp, "java"), isFile(p)}, errorRecovery = errorRecovery, sourcePath = [*findRoots(sourcePaths)], classPath = classPaths, javaVersion = javaVersion));
 
-    registerProject(project, result);
+    registerProject(project, result, authority="");
     
     if (includeJarModels) {
       results = composeJavaM3(project, {result, *{createM3FromJar(j, classPath=classPaths) |  j <- classPaths}});
@@ -281,7 +281,7 @@ M3 createM3FromMavenProject(loc project, bool errorRecovery = false, bool includ
     sourcePaths = getPaths(project, "java");
     M3 result = composeJavaM3(project, createM3sFromFiles({p | sp <- sourcePaths, p <- find(sp, "java"), isFile(p)}, errorRecovery = errorRecovery, sourcePath = [*findRoots(sourcePaths)], classPath = classPaths, javaVersion = javaVersion));
 
-    registerProject(project, result);
+    registerProject(project, result, authority="");
     
     if (includeJarModels) {
       results = composeJavaM3(project, {result, *{createM3FromJar(j, classPath=classPaths) |  j <- classPaths}});
